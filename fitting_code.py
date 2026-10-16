@@ -52,7 +52,6 @@ for b in range(B):
     y_boot = yhat + r_perm
     res_b = minimize(ssr, theta0, args=(t_data, y_boot), method='Nelder-Mead')
     boot_params[b] = res_b.x
-    theta0 = res_b.x  
 
 sorted_params = np.sort(boot_params, axis=0)
 idx_lo = int(0.025 * B)
